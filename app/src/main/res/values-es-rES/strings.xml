@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">The Fruitis</string>
+    <string name="TxtPrincipal">Formulario Fruitis</string>
+    <string name="name">Nombre...</string>
+    <string name="weight">Peso...</string>
+</resources>

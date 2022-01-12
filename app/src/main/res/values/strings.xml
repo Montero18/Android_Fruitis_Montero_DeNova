@@ -3,12 +3,6 @@
     <string name="TxtPrincipal">Form Fruitis</string>
     <string name="name">Name...</string>
     <string name="weight">Weight</string>
-    <string name="rotten">Rotten</string>
-    <string name="add">Add</string>
-    <string name="TxtPrincipal2">Search Fruitis</string>
-    <string name="getAll">Get All</string>
-    <string name="getLast">Get Last</string>
-    <string name="getByName">Get By Name</string>
     <string-array name="spinner">
         <item>Sweet</item>
         <item>Salty</item>
