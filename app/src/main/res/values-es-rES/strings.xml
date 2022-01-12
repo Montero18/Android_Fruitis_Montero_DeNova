@@ -5,6 +5,7 @@
     <string name="name">Nombre...</string>
     <string name="weight">Peso...</string>
     <string-array name="spinner">
+        <item></item>
         <item>Dulce</item>
         <item>Salado</item>
         <item>Acido</item>
