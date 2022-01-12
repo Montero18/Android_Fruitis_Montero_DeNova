@@ -22,8 +22,8 @@
 
     <TextView
         android:id="@+id/textView2"
-        android:layout_width="269dp"
-        android:layout_height="41dp"
+        android:layout_width="381dp"
+        android:layout_height="34dp"
         android:fontFamily="serif-monospace"
         android:text="Search Fruitis"
         android:textSize="34sp"
