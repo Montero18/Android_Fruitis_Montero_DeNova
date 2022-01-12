@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">The Fruitis</string>
     <string name="TxtPrincipal">Form Fruitis</string>
@@ -10,6 +11,7 @@
     <string name="getLast">Get Last</string>
     <string name="getByName">Get By Name</string>
     <string-array name="spinner">
+        <item></item>
         <item>Sweet</item>
         <item>Salty</item>
         <item>Sour</item>
