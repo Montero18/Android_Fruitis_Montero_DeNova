@@ -4,4 +4,18 @@
     <string name="TxtPrincipal">Formulario Fruitis</string>
     <string name="name">Nombre...</string>
     <string name="weight">Peso...</string>
+    <string-array name="spinner">
+        <item>Dulce</item>
+        <item>Salado</item>
+        <item>Acido</item>
+        <item>Picante</item>
+        <item>Amargo</item>
+        <item>Umani</item>
+    </string-array>
+    <string name="rotten">Podrido</string>
+    <string name="add">Añadir</string>
+    <string name="TxtPrincipal2">Buscar Fruta</string>
+    <string name="getAll">Obtener todas</string>
+    <string name="getLast">Obtener el Ultimo</string>
+    <string name="getByName">Obtener por el Nombre</string>
 </resources>
