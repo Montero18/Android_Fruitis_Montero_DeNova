@@ -66,6 +66,7 @@
         android:id="@+id/spinner"
         android:layout_width="157dp"
         android:layout_height="48dp"
+        android:entries="@array/spinner"
         android:spinnerMode="dropdown"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
