@@ -19,4 +19,6 @@
         <item>Bitter</item>
         <item>Umani</item>
     </string-array>
+    <string name="itemEliminar">Delete</string>
+    <string name="itemListar">Get List</string>
 </resources>
