@@ -20,20 +20,37 @@ import android.widget.Toast;
 
 public class BaseDatos extends AppCompatActivity {
 
-    EditText nombre, peso;
-    Spinner sabor;
-    CheckBox podrido;
-
-    Helper helper = new Helper(this);
-    SQLiteDatabase db;
+    String txt1, txt2, txt3, txt4;
 
     ListView tabla = findViewById(R.id.tablaDatos);
+
+    SQLiteDatabase db;
+    Helper helper = new Helper(this);
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+    }
+
+    public void mostrarLista(){
+
+        db = helper.getReadableDatabase();
+        Cursor cursor = db.query("fruitis", null, null, null, null, null, null);
+        cursor.moveToFirst();
+
+        for (int i = 0; i < cursor.getCount(); i++) {
+            txt1 = cursor.getString(1);
+            txt2 = cursor.getString(2);
+            txt3 = cursor.getString(3);
+            txt4 = cursor.getString(4);
+
+
+            tabla.append("\n" + txt1 + " " + txt2 + " " + txt3 + " " + txt4);
+            cursor.moveToNext();
+        }
     }
 
 }

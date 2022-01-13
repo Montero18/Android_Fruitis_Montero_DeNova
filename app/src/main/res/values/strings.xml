@@ -11,7 +11,6 @@
     <string name="getLast">Get Last</string>
     <string name="getByName">Get By Name</string>
     <string-array name="spinner">
-        <item></item>
         <item>Sweet</item>
         <item>Salty</item>
         <item>Sour</item>
