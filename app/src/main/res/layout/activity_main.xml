@@ -104,6 +104,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:autoText="false"
+        android:onClick="pasarActividad"
         android:text="@string/getAll"
         android:textColor="#FFFFFF"
         android:textColorHighlight="#E80000"
@@ -122,6 +123,7 @@
         android:selectAllOnFocus="false"
         android:singleLine="false"
         android:text="@string/getLast"
+        android:onClick="listarUltimo"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.445"
@@ -135,6 +137,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/getByName"
+        android:onClick="listarNombre"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.923"
@@ -149,12 +152,24 @@
         android:ems="10"
         android:hint="@string/name"
         android:inputType="textPersonName"
-        android:visibility="invisible"
+        android:visibility="visible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.553"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.565" />
+
+    <ListView
+        android:id="@+id/tablaDatos"
+        android:layout_width="409dp"
+        android:layout_height="295dp"
+        android:freezesText="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

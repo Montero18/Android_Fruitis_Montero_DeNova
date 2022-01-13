@@ -40,10 +40,8 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
-
-
     }
+
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater inflater=getMenuInflater();
@@ -123,6 +121,7 @@ public class MainActivity extends AppCompatActivity {
     public void listarNombre (View view) {
 
         buscarNombre = findViewById(R.id.nombreListar);
+        buscarNombre.setVisibility(View.VISIBLE);
 
         db = helper.getReadableDatabase();
         Cursor cursor = db.query("fruitis", null, null, null, null, null, null);
@@ -141,6 +140,12 @@ public class MainActivity extends AppCompatActivity {
                 cursor.moveToNext();
             }
         }
+
+    }
+
+    public void pasarActividad (View view) {
+        Intent i = new Intent(this, BaseDatos.class);
+        startActivity(i);
 
     }
 
