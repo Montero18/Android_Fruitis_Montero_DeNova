@@ -102,19 +102,20 @@
         app:layout_constraintVertical_bias="0.321" />
 
     <Button
-        android:id="@+id/botonBuscarTodo"
+        android:id="@+id/botonListarTodo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:autoText="false"
+        android:onClick="pasarActividad"
         android:text="@string/getAll"
         android:textColor="#FFFFFF"
         android:textColorHighlight="#E80000"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.573"
+        app:layout_constraintHorizontal_bias="0.094"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.55" />
+        app:layout_constraintVertical_bias="0.666" />
 
     <Button
         android:id="@+id/botonBuscarUltimo"
@@ -124,12 +125,13 @@
         android:selectAllOnFocus="false"
         android:singleLine="false"
         android:text="@string/getLast"
+        android:onClick="listarUltimo"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.094"
+        app:layout_constraintHorizontal_bias="0.096"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.716"
+        app:layout_constraintVertical_bias="0.798"
         app:strokeColor="#BD1111" />
 
     <Button
@@ -137,38 +139,39 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/getByName"
+        android:onClick="listarNombre"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.299"
+        app:layout_constraintHorizontal_bias="0.099"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.716" />
+        app:layout_constraintVertical_bias="0.955" />
 
     <EditText
         android:id="@+id/nombreListar"
-        android:layout_width="255dp"
-        android:layout_height="47dp"
+        android:layout_width="216dp"
+        android:layout_height="52dp"
         android:ems="10"
         android:hint="@string/name"
         android:inputType="textPersonName"
         android:visibility="visible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.71"
+        app:layout_constraintHorizontal_bias="0.409"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.717" />
+        app:layout_constraintVertical_bias="0.722" />
 
     <ListView
         android:id="@+id/tablaDatos"
-        android:layout_width="616dp"
-        android:layout_height="87dp"
+        android:layout_width="299dp"
+        android:layout_height="224dp"
         android:freezesText="true"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintVertical_bias="0.993" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

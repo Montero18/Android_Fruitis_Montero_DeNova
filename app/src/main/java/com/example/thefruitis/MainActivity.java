@@ -12,11 +12,15 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.Spinner;
 import android.widget.Toast;
+
+import java.sql.Array;
+import java.util.Arrays;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -25,12 +29,15 @@ public class MainActivity extends AppCompatActivity {
     Spinner listaSabores;
     CheckBox podrido;
 
+    String [] lista = new String [4];
+
+
     SQLiteDatabase db;
     Helper helper;
 
 
 
-    ListView tabla = findViewById(R.id.tablaDatos);
+    ListView tabla;
     String nombreElegido;
     String txt1, txt2, txt3, txt4;
 
@@ -40,6 +47,9 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        tabla = findViewById(R.id.tablaDatos);
+        helper = new Helper(this);
     }
 
     @Override
@@ -107,18 +117,19 @@ public class MainActivity extends AppCompatActivity {
         Cursor cursor = db.query("fruitis", null, null, null, null, null, null);
         cursor.moveToLast();
 
-            txt1 = cursor.getString(1);
-            txt2 = cursor.getString(2);
-            txt3 = cursor.getString(3);
-            txt4 = cursor.getString(4);
+            lista[0] = cursor.getString(1);
+            lista[1] = cursor.getString(2);
+            lista[2] = cursor.getString(3);
+            lista[3] = cursor.getString(4);
 
+            ArrayAdapter <String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, lista);
+            tabla.setAdapter(adapter);
 
-            tabla.append("\n" + txt1 + " " + txt2 + " " + txt3 + " " + txt4);
             cursor.moveToNext();
 
     }
 
-    public void listarNombre (View view) {
+    public void listarNombre(View view) {
 
         buscarNombre = findViewById(R.id.nombreListar);
         buscarNombre.setVisibility(View.VISIBLE);
@@ -130,13 +141,15 @@ public class MainActivity extends AppCompatActivity {
 
         for (int i = 0; i < cursor.getCount(); i++) {
 
-            if(txt1.equalsIgnoreCase(buscarNombre.getText().toString())){
-                txt1 = cursor.getString(1);
-                txt2 = cursor.getString(2);
-                txt3 = cursor.getString(3);
-                txt4 = cursor.getString(4);
+            if(txt1.equals((buscarNombre.getText().toString()))){
+                lista[0] = cursor.getString(1);
+                lista[1] = cursor.getString(2);
+                lista[2] = cursor.getString(3);
+                lista[3] = cursor.getString(4);
 
-                tabla.append("\n" + txt1 + " " + txt2 + " " + txt3 + " " + txt4);
+                ArrayAdapter <String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, lista);
+                tabla.setAdapter(adapter);
+
                 cursor.moveToNext();
             }
         }
@@ -146,7 +159,6 @@ public class MainActivity extends AppCompatActivity {
     public void pasarActividad (View view) {
         Intent i = new Intent(this, BaseDatos.class);
         startActivity(i);
-
     }
 
 }

@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".MainActivity"
+    tools:visibility="visible">
 
     <TextView
         android:id="@+id/textView"
@@ -90,8 +91,8 @@
         android:id="@+id/botonAdd"
         android:layout_width="364dp"
         android:layout_height="50dp"
-        android:text="@string/add"
         android:onClick="añadir"
+        android:text="@string/add"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.553"
@@ -100,7 +101,7 @@
         app:layout_constraintVertical_bias="0.271" />
 
     <Button
-        android:id="@+id/botonBuscarTodo"
+        android:id="@+id/botonListarTodo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:autoText="false"
@@ -119,11 +120,11 @@
         android:id="@+id/botonBuscarUltimo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:onClick="listarUltimo"
         android:scrollbarAlwaysDrawVerticalTrack="false"
         android:selectAllOnFocus="false"
         android:singleLine="false"
         android:text="@string/getLast"
-        android:onClick="listarUltimo"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.445"
@@ -136,8 +137,8 @@
         android:id="@+id/botonBuscarNombre"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/getByName"
         android:onClick="listarNombre"
+        android:text="@string/getByName"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.923"
@@ -152,7 +153,6 @@
         android:ems="10"
         android:hint="@string/name"
         android:inputType="textPersonName"
-        android:visibility="visible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.553"
@@ -167,9 +167,8 @@
         android:freezesText="true"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintVertical_bias="0.995" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
