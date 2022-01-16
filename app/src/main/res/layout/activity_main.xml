@@ -1,174 +1,148 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity"
-    tools:visibility="visible">
+    android:orientation="vertical"
+    tools:context=".MainActivity">
 
     <TextView
         android:id="@+id/textView"
         android:layout_width="353dp"
         android:layout_height="35dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="30dp"
+        android:layout_marginBottom="5dp"
         android:fontFamily="serif-monospace"
+        android:gravity="top"
         android:text="@string/TxtPrincipal"
-        android:textSize="34sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.448"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.022" />
-
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="290dp"
-        android:layout_height="38dp"
-        android:fontFamily="serif-monospace"
-        android:text="@string/TxtPrincipal2"
-        android:textSize="34sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.214"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.391" />
+        android:textSize="34sp" />
 
     <EditText
         android:id="@+id/nombre"
         android:layout_width="359dp"
         android:layout_height="48dp"
+        android:layout_below="@id/textView"
+        android:layout_centerHorizontal="true"
+        android:layout_margin="5dp"
         android:ems="10"
         android:hint="@string/name"
         android:includeFontPadding="false"
-        android:inputType="textPersonName"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.097" />
+        android:inputType="textPersonName" />
 
     <EditText
         android:id="@+id/peso"
         android:layout_width="92dp"
         android:layout_height="48dp"
+        android:layout_below="@id/nombre"
+        android:layout_margin="5dp"
+        android:layout_toLeftOf="@id/spinner"
         android:ems="10"
         android:hint="@string/weight"
-        android:inputType="textPersonName"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.081"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.185" />
+        android:inputType="textPersonName" />
 
     <Spinner
         android:id="@+id/spinner"
         android:layout_width="157dp"
         android:layout_height="48dp"
+        android:layout_below="@id/nombre"
+        android:layout_centerHorizontal="true"
+        android:layout_margin="5dp"
         android:entries="@array/spinner"
-        android:spinnerMode="dropdown"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.184" />
+        android:spinnerMode="dropdown" />
 
     <CheckBox
         android:id="@+id/podrido"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/rotten"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.923"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.184" />
+        android:layout_below="@id/nombre"
+        android:layout_margin="5dp"
+        android:layout_toRightOf="@id/spinner"
+        android:text="@string/rotten" />
 
     <Button
         android:id="@+id/botonAdd"
         android:layout_width="364dp"
         android:layout_height="50dp"
+        android:layout_below="@id/peso"
+        android:layout_centerHorizontal="true"
+        android:layout_margin="5dp"
         android:onClick="añadir"
-        android:text="@string/add"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.553"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.271" />
+        android:text="@string/add" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="290dp"
+        android:layout_height="38dp"
+        android:layout_centerInParent="true"
+        android:fontFamily="serif-monospace"
+        android:text="@string/TxtPrincipal2"
+        android:textSize="34sp" />
 
     <Button
         android:id="@+id/botonListarTodo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_below="@id/textView2"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="5dp"
+        android:layout_marginBottom="5dp"
+        android:layout_toLeftOf="@id/botonBuscarNombre"
         android:autoText="false"
         android:onClick="pasarActividad"
         android:text="@string/getAll"
         android:textColor="#FFFFFF"
-        android:textColorHighlight="#E80000"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.082"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.477" />
+        android:textColorHighlight="#E80000" />
 
     <Button
         android:id="@+id/botonBuscarUltimo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_below="@id/textView2"
+        android:layout_centerHorizontal="false"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="5dp"
+        android:layout_marginBottom="5dp"
+        android:layout_toRightOf="@id/botonBuscarNombre"
         android:onClick="listarUltimo"
         android:scrollbarAlwaysDrawVerticalTrack="false"
         android:selectAllOnFocus="false"
         android:singleLine="false"
-        android:text="@string/getLast"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.445"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.477"
-        app:strokeColor="#BD1111" />
+        android:text="@string/getLast" />
 
     <Button
         android:id="@+id/botonBuscarNombre"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_below="@id/textView2"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="5dp"
+        android:layout_marginBottom="5dp"
         android:onClick="listarNombre"
-        android:text="@string/getByName"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.923"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.477" />
+        android:text="@string/getByName" />
 
     <EditText
         android:id="@+id/nombreListar"
         android:layout_width="364dp"
         android:layout_height="48dp"
+        android:layout_below="@id/botonListarTodo"
+        android:layout_centerHorizontal="true"
+        android:layout_margin="5dp"
         android:ems="10"
         android:hint="@string/name"
-        android:inputType="textPersonName"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.553"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.565" />
+        android:inputType="textPersonName" />
 
     <ListView
         android:id="@+id/tablaDatos"
         android:layout_width="409dp"
         android:layout_height="295dp"
-        android:freezesText="true"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.995" />
+        android:layout_below="@id/nombreListar"
+        android:layout_centerHorizontal="true"
+        android:layout_margin="5dp" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+</RelativeLayout>
