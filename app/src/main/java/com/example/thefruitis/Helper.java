@@ -11,7 +11,6 @@ public class Helper extends SQLiteOpenHelper {
     public static final int DATABASE_VERSION = 1;
     public static final String DATABASE_NAME = "bdFruitis.db";
     public static final String SQL_CREATE_ENTRIES = "CREATE TABLE IF NOT EXISTS fruitis(_id integer PRIMARY KEY AUTOINCREMENT, nombre text, peso  text, sabor text, podrido text);";
-    public static final String SQL_DELETE_ENTRIES = "DROP TABLE IF EXISTS  bdFruitis.db";
 
     //Constructor
     public Helper(@Nullable Context context) {

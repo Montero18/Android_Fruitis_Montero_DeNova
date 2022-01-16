@@ -45,17 +45,19 @@ public class BaseDatos extends AppCompatActivity {
         Cursor cursor = db.query("fruitis", null, null, null, null, null, null);
         cursor.moveToFirst();
 
+        concat = "";
+
         for (int i = 0; i < cursor.getCount(); i++) {
-            concat = concat + cursor.getString(1) + "   -->             ";
-            concat = concat + cursor.getString(2) + "g                  ";
-            concat = concat + cursor.getString(3) + "                   ";
-            concat = concat + cursor.getString(4) + "                   ";
+            concat = concat + cursor.getString(1) + "        -->    |        ";
+            concat = concat + cursor.getString(2) + " g       |    ";
+            concat = concat + cursor.getString(3) + "      |      ";
+            concat = concat + cursor.getString(4) + "     |      ";
 
             lista.add(concat);
 
             cursor.moveToNext();
 
-            concat = "";
+            concat = " ";
         }
 
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, lista);

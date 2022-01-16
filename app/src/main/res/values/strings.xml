@@ -20,4 +20,5 @@
     </string-array>
     <string name="itemEliminar">Delete</string>
     <string name="itemListar">Get List</string>
+    <string name="botonEliminar">Delete</string>
 </resources>

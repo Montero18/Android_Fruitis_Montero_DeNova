@@ -20,6 +20,7 @@ import android.widget.Spinner;
 import android.widget.Toast;
 
 import java.sql.Array;
+import java.util.ArrayList;
 import java.util.Arrays;
 
 public class MainActivity extends AppCompatActivity {
@@ -36,11 +37,10 @@ public class MainActivity extends AppCompatActivity {
     Helper helper;
 
 
-
     ListView tabla;
     String nombreElegido;
-    String txt1, txt2, txt3, txt4;
-
+    String concat;
+    ArrayList<String> lista2;
 
 
     @Override
@@ -48,8 +48,9 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        tabla = findViewById(R.id.tablaDatos);
+        tabla = (ListView) findViewById (R.id.tablaDatos);
         helper = new Helper(this);
+        lista2 = new ArrayList<String>();
     }
 
     @Override
@@ -129,32 +130,34 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    public void listarNombre(View view) {
+    public void listarNombre (View view) {
 
         buscarNombre = findViewById(R.id.nombreListar);
-        buscarNombre.setVisibility(View.VISIBLE);
 
-        db = helper.getReadableDatabase();
-        Cursor cursor = db.query("fruitis", null, null, null, null, null, null);
+        String nombreBuscar = buscarNombre.getText().toString();
+
+        db = helper.getWritableDatabase();
+        Cursor cursor = db.rawQuery("SELECT nombre, peso, sabor, podrido FROM fruitis WHERE nombre = '" + nombreBuscar + "';", null);
         cursor.moveToFirst();
 
+        concat = "";
 
         for (int i = 0; i < cursor.getCount(); i++) {
+            concat = concat + cursor.getString(0) + "   -->             ";
+            concat = concat + cursor.getString(1) + "g                  ";
+            concat = concat + cursor.getString(2) + "                   ";
+            concat = concat + cursor.getString(3) + "                   ";
 
-            if(txt1.equals((buscarNombre.getText().toString()))){
-                lista[0] = cursor.getString(1);
-                lista[1] = cursor.getString(2);
-                lista[2] = cursor.getString(3);
-                lista[3] = cursor.getString(4);
+            lista2.add(concat);
 
-                ArrayAdapter <String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, lista);
-                tabla.setAdapter(adapter);
-
-                cursor.moveToNext();
-            }
+            cursor.moveToNext();
         }
 
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, lista2);
+        tabla.setAdapter(adapter);
+
     }
+
 
     public void pasarActividad (View view) {
         Intent i = new Intent(this, BaseDatos.class);

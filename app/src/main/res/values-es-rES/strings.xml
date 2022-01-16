@@ -20,4 +20,5 @@
     <string name="getByName">Obtener por el Nombre</string>
     <string name="itemEliminar">Eliminar</string>
     <string name="itemListar">Obtener Lista</string>
+    <string name="botonEliminar">Eliminar</string>
 </resources>
