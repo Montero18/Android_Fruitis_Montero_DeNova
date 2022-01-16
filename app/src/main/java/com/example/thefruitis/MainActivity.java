@@ -119,7 +119,7 @@ public class MainActivity extends AppCompatActivity {
         cursor.moveToLast();
 
             lista[0] = cursor.getString(1);
-            lista[1] = cursor.getString(2);
+            lista[1] = cursor.getString(2) + "g";
             lista[2] = cursor.getString(3);
             lista[3] = cursor.getString(4);
 
